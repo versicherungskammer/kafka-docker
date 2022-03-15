@@ -1,4 +1,6 @@
-#!/bin/sh -e
+#!/usr/bin/env bash
+
+set -e
 
 # shellcheck disable=SC1091
 source "/usr/bin/versions.sh"
@@ -15,4 +17,4 @@ if [[ ! $(curl -f -s -r 0-1 "${url}") ]]; then
 fi
 
 echo "Downloading Kafka from $url"
-wget "${url}" -O "/tmp/${FILENAME}"
+wget "${url}" -O "/tmp/kafka/${FILENAME}"
