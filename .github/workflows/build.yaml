@@ -18,7 +18,7 @@ jobs:
       - name: Build the Docker image
         env:
           GIT_AUTHOR_NAME: ${{ github.event.head_commit.author.name }}
-        run: docker buildx build src
+        run: docker buildx build .
           --file Dockerfile.bullseye
           --label org.opencontainers.image.created="$(date +'%Y-%m-%dT%H:%M:%S%z')"
           --label org.opencontainers.image.authors="$GIT_AUTHOR_NAME <tierleben-development@vkb.de>"

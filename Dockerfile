@@ -22,7 +22,6 @@ ENV KAFKA_VERSION=$kafka_version \
 
 ENV PATH=${PATH}:${KAFKA_HOME}/bin
 
-RUN mkdir -p /tmp/kafka
 COPY download-kafka.sh start-kafka.sh broker-list.sh create-topics.sh versions.sh /tmp/kafka/
 
 RUN apk add --no-cache bash curl jq docker \
